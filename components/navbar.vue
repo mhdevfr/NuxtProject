@@ -6,16 +6,13 @@
          text-center justify-center min-h-full 
          items-center"
          >
-            <li class="mb-10 mt-10 scale-150 animate-bounce"><a href="#" class="">🏠 Accueil</a></li>
-            <li class="mb-10 "><a href='#'>📦 Projets</a></li>
-            <li class="mb-10"><a href='#'>💻 Skills</a></li>
-            <li class="mb-10"><a href='#'>📔 Bio</a></li>
-            <li class="mb-10"><a href='#' size="">🧾 F.A.Q</a></li>
-            <li class="mb-10"><a href='#'>💬 Contact</a></li>
-            <a href='https://github.com/mhdevfr/portfolio'><img src="./../images/icons8-github-50-2.png" width="20px"></a>
-            <li class="mb-10"><a href='#'></a></li>
-
-            </ul>
+            <nuxt-link to="/" class="mb-12">🏠<br> Accueil</nuxt-link> 
+            <nuxt-link to="/login" class="mb-12">👨🏻‍💻<br> Login</nuxt-link> 
+            <nuxt-link to="/produits" class="mb-12">📦<br> Produits</nuxt-link> 
+            <nuxt-link to="/faq" class="mb-12">🧾<br> F.A.Q</nuxt-link> 
+            <nuxt-link to="/contact" class="mb-12">💬<br> Contact</nuxt-link> 
+            <nuxt-link to="/bio" class="mb-12">📔<br> Credits</nuxt-link> 
+         </ul>
     </div>
 </template>
 
