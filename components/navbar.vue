@@ -1,12 +1,12 @@
 
 <template>
-    <div class="h-5/6" v-motion-slide-visible-left>
+    <div class="h-full flex items-center" v-motion-slide-visible-left>
         <ul class="bg-slate-950 flex flex-col width 
          m-10 text-white rounded-full w-16
-         text-center justify-center min-h-full 
+         text-center justify-center
          items-center"
          >
-            <nuxt-link to="/" class="mb-12">🏠<br> Accueil</nuxt-link> 
+            <nuxt-link to="/" class="mb-12 mt-12" >🏠<br> Accueil</nuxt-link> 
             <nuxt-link to="/login" class="mb-12">👨🏻‍💻<br> Login</nuxt-link> 
             <nuxt-link to="/produits" class="mb-12">📦<br> Produits</nuxt-link> 
             <nuxt-link to="/faq" class="mb-12">🧾<br> F.A.Q</nuxt-link> 

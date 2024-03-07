@@ -1,8 +1,9 @@
 <template>
-    <div class="flex justify-center flex-col bg-red-400 rounded h-64 w-80">
-        <h2>Produit fou</h2><br>
-        <img src="../images/projetBoutique.png" class="w-72 h-32">
-        <p>Description : Ce produit est un lorem</p>
+    <div class="flex justify-center bg-white flex-col rounded h-96 w-64">
+            <h2 class="ml-2">NFT : Azuki #4232</h2>
+            <img src="../images/nft1.avif" class="h-52 w-64">
+            <p class="ml-2 mt-2">Description : NFT de la collection Pingouin from USA.</p>
+            <h1 class="my-8 ml-2">Prix : 1.24 ETH</h1>
     </div>
 
 </template>
