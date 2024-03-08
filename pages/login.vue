@@ -26,9 +26,13 @@
 
 <script setup lang="ts">
 
+
+
 const client = useSupabaseClient()
 const user = useSupabaseClient()
 const router = useRouter()
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
 
 watchEffect(() => {
     if(user.value){
