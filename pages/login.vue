@@ -7,10 +7,16 @@
                     <h1 class="text-3xl mt-2 text-white">Se connecter</h1>
                     <h1 class="text-white">Avec Github</h1>
                     <img src="../images/icons8-github-90.png" class="w-20 h-20 my-8">
+                        <button 
+                        @click='client.auth.signIn({ provider: "Github "})'
+                        class="text-center rounded h-8 min-w-48 mb-8 bg-green-400">
+                        Connexion
+                        </button>
                     <button 
-                    @click='client.auth.signIn({ provider: "Github "})'
-                    class="text-center rounded h-8 min-w-48 mb-8 bg-green-400">
-                    Connexion
+                    v-if="user" 
+                    @click="client.auth.signOut()"
+                    class="h-8 bg-red-400 rounded my-8">
+                    Déconnexion
                     </button>
                 </form>
             </div>
@@ -29,5 +35,17 @@ watchEffect(() => {
         router.push('./produits')       
     }
 })
+
+async function signInWithGithub() {
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: 'github',
+  })
+}
+
+
+
+async function signOut() {
+  const { error } = await supabase.auth.signOut()
+}
 
 </script>

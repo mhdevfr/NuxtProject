@@ -8,7 +8,8 @@ export default defineNuxtConfig({
   modules:[
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
-    '@vueuse/motion/nuxt'
+    '@vueuse/motion/nuxt',
+    '@nuxtjs/supabase',
   ]
 
 })
