@@ -3,8 +3,8 @@
         <navbar class="absolute l-0"/>
         <div class="flex flex-col items-center">
                 <h1 class="text-2xl my-16 text-center">Découvrez nos différents produits :</h1>
-                <produitListe
-                :produits="produits"
+                <ProduitListe
+                :produits="produitData"
                 />
         </div>
     </div>
@@ -13,6 +13,7 @@
 <script setup lang="ts">
 
 import type { ProduitInterface} from './../interfaces/produit.interface';
+import produitData from './../data/produitData';
 
 const props = defineProps<{
     produits: ProduitInterface[]
