@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import {resolve} from "path";
+import { resolve } from 'path';
 export default defineNuxtConfig({
   alias:{
     "@": resolve(__dirname, '/')
@@ -10,6 +10,8 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@vueuse/motion/nuxt',
     '@nuxtjs/supabase',
-  ]
-
+  ],
+  supabase: {
+    redirect: false
+  }
 })
