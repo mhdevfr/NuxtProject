@@ -11,6 +11,7 @@
 <script setup lang="ts">
 
 import type { ProduitInterface } from '../interfaces/produit.interface';
+import produitData from './../data/produitData';
 
 defineProps<{
     produit: ProduitInterface;
