@@ -4,28 +4,37 @@
         <div class="min-w-full min-h-screen  flex items-center justify-center ">
             <div class="h-1/2 min-w-full flex items-center justify-center">
                 <form 
+                    @submit.prevent="submit"
                     class="flex flex-col  w-3/12 justify-center bg-black items-center border rounded-xl">
+                    <input type="email" v-model="state.email" class="h-8 my-2 text-black text-center">
+                    <input type="password" v-model="state.password" class="h-8 my-2 text-black text-center">
+                    <input type="submit" class="bg-blue-400 rounded w-16">
                     <h1 class="text-3xl mt-2 text-white">Se connecter avec Github</h1>
                     <img src="../images/icons8-github-90.png">
-                    <button class="text-black bg-green-300 h-8 my-16 rounded-xl w-1/2" @click="signInWithGithub()">Connect with github</button>
+                    <button class="text-black bg-green-300 h-8 my-16 rounded-xl w-1/2">Connect with github</button>
                 </form>
             </div>
         </div>
     </div>
 </template>
 
-<script setup lang="ts">
-async function signInWithGithub() {
-  const { data, error } = await supabase.auth.signInWithOAuth({
-    provider: 'github',
-  })
+<script lang="ts" setup>
+
+const state = {
+    email: '',
+    password: '',
 }
 
-import { createClient } from '@supabase/supabase-js'
+const supabase = useSupabaseClient();
 
-const supabaseUrl = 'https://moaulmnomptksngvnboj.supabase.co'
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1vYXVsbW5vbXB0a3NuZ3ZuYm9qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk5MTc1NjUsImV4cCI6MjAyNTQ5MzU2NX0.dOeKSg3blO0MVbnCH6cvfhQ4UFJ1C5S88lQkd01S8F4"
-const supabase = createClient(supabaseUrl, supabaseKey)
+async function submit(event: FormSubmitEvent<any>) {
+    const { email, password } = state;
 
+    await supabase.auth.signInWithPassword({
+        email,
+        password,
+    });
 
+    navigateTo('/');
+}
 </script>
