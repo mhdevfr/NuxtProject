@@ -1,5 +1,7 @@
 <template>
-    <navbar class="absolute l-0"/>
+    <div class="relative inset-0 w-full h-full bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"> 
+        <navbar class="absolute l-0"/>
+
     <div class="min-h-screen min-w-full flex items-center justify-around">
         
         <div class="min-w-96 rounded" id="bio">
@@ -33,6 +35,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </template>
 
