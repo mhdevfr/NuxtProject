@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.11.4",
+    "@supabase/supabase-js": "^2.39.7",
     "@vueuse/motion": "^2.1.0",
+    "fs-extra": "^11.2.0",
     "gsap": "^3.12.5",
     "nuxt": "^3.10.3",
     "nuxt-icon": "^0.6.8",

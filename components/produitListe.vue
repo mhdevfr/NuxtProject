@@ -5,6 +5,7 @@
         :key="produit.id"
         :produit="produit"
         />
+        <addProduct class="bg-slate-600"/>
     </div>
 </template>
 
