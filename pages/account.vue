@@ -1,11 +1,15 @@
-<template>
-    <div class="w-full flex items-center justify-center min-h-screen inset-0 bg-black bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] text-white">
-        <div class="text-9xl">Welcome </div>
-    </div>
-</template>
+<script setup>
+import { createClient } from '@supabase/supabase-js'
+const supabase = createClient('https://ytjnhumbxslmzwucvdvr.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl0am5odW1ieHNsbXp3dWN2ZHZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk3Mzk5NDIsImV4cCI6MjAyNTMxNTk0Mn0.O08VhxUStahbtufYTHegH2zUKyOTQgv2cIPZ1wTzQHo')
 
-<script setup lang="ts">
+const { data, error } = await supabase
+  .from('users')
+  .select('name')
 
 
 
 </script>
+
+<template>
+  <h1 class="text-9xl">Hello {{ users.name }}</h1>
+</template>

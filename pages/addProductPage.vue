@@ -7,7 +7,7 @@
             <input type="url" class="bg-white border  h-8 w-5/12 my-4" v-model="URL" placeholder="Votre URL d'image de NFT">
             <input type="text" class="bg-white border  h-32 w-5/12 my-4" v-model="description" placeholder="Votre description de NFT">
             <input type="number" class="bg-white border  h-8 w-5/12 my-4" v-model="prix" placeholder="Votre prix de NFT">
-            <h2 class="text-red-600" v-if="!newNFT">Tous les champs sont requis</h2>
+            <h2 class="text-red-600" v-bind="error" >Tous les champs sont requis</h2>
             <h2 class="text-green-600 my-4" v-if="isNFTAdded">NFT ajouté aux produits redirection imminente.</h2>
             <button class="h-8 w-3/12 bg-green-400 rounded-md" @click="newNFT()">Ajouter votre NFT</button>
         </div>
@@ -50,10 +50,13 @@ const newNFT = () => {
         listeNFT.push(newNFT);
         isNFTAdded.value = true;
         nftAdded();
+        return error(false)
     } else {
-        console.error('Tous les champs sont requis.');
+        
     }
 };
+
+
 
 const nftAdded = () => {
     setTimeout(() => {
