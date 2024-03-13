@@ -9,8 +9,7 @@
           <input type="password" v-model="password" placeholder="your password" class="h-8 my-4 w-3/4 text-black text-center">
           <input type="password" v-model="passwordConf" placeholder="confirm your password" class="h-8 w-3/4 my-4 text-black text-center">
           <h2 class="text-xl text-green-400 text-center" ref="monRetour"></h2>
-          <input type="submit" value="Inscription" class="bg-blue-400 h-10 w-full hover:bg-green-600 my-8 transition-colors">
-          <h2 v-if="password !== passwordConf" class="text-red-600">Veuillez confirmer correctement le mot de passe.</h2>
+          <input type="submit" value="Inscription" class="hover:bg-blue-400 h-10 w-full bg-green-600 my-8 transition-colors">
         </form>
       </div>
     </div>
@@ -35,7 +34,6 @@ async function submitForm() {
   if(password === passwordConf){
     monRetour.value.innerText = "Veuillez vérifier votre boîte mail pour confirmer votre compte";
     monRetour.value.style.color = 'green'
-
   try {
     const { data, error } = await supabase.auth.signUp({
       email,
