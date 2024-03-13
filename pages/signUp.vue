@@ -5,13 +5,11 @@
       <div class="h-1/2 min-w-full flex items-center justify-center">
         <form @submit.prevent="submitForm" class="flex flex-col  w-3/12 justify-around h-96 bg-black items-center border rounded-xl">
           <h1 class="text-3xl mt-2 text-white">S'enregistrer</h1>
-          <input type="email" v-model="email" class="h-8 my-2 text-black text-center">
-          <input type="password" v-model="password" class="h-8 my-2 text-black text-center">
-          <input type="submit" class="bg-blue-400 rounded w-16">
-          <button class="text-black bg-green-300  my-4 w-full items-center flex justify-center" @click="loginWithGitHub">
-            Connect with GitHub
-            <img src="../images/icons8-github-50.png" class="w-10 ml-5 h-10">
-          </button>
+          <input type="email" v-model="email" class="h-8 my-4 text-black text-center">
+          <input type="password" v-model="password" class="h-8 my-4 text-black text-center">
+          <input type="password" v-model="passwordConf" class="h-8 my-4 text-black text-center">
+          <input type="submit" value="Inscription" class="bg-blue-400 h-10 w-full hover:bg-green-600 my-8 transition-colors">
+          <h2 v-if="password !== passwordConf" class="text-red-600">Veuillez confirmer correctement le mot de passe.</h2>
         </form>
       </div>
     </div>
@@ -26,8 +24,10 @@ const supabase = createClient('https://moaulmnomptksngvnboj.supabase.co','eyJhbG
 
 let email = '';
 let password = '';
+let passwordConf = '';
 
 async function submitForm() {
+  if(password === passwordConf){
   try {
     const { data, error } = await supabase.auth.signUp({
       email,
@@ -38,8 +38,11 @@ async function submitForm() {
     }
     console.log('User:', data);
     console.log('Session:', error);
-  } catch (error) {
+    } catch (error) {
     console.error('Error signing in:', error);
+    }
+  } else {
+
   }
 }
 
